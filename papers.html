@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papers · Luke D. Visconte</title>
+  <meta name="description" content="Working and finished papers by Luke D. Visconte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="site-name" href="index.html">Luke D. Visconte</a>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="papers.html" aria-current="page">Papers</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Papers</h1>
+    <p class="muted">Working papers are drafts and may change. Comments are welcome.</p>
+
+    <!-- Both lists fill themselves from assets/papers.js -->
+    <h2>Working papers</h2>
+    <div id="working-papers"></div>
+
+    <h2>Finished papers</h2>
+    <div id="finished-papers"></div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">&copy; <span id="year"></span> Luke D. Visconte</div>
+  </footer>
+
+  <script src="assets/papers.js"></script>
+  <script src="assets/render.js"></script>
+</body>
+</html>
