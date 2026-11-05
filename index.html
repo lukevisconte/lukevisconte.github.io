@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luke D. Visconte</title>
+  <meta name="description" content="Research and working papers by Luke D. Visconte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="site-name" href="index.html">Luke D. Visconte</a>
+      <nav>
+        <a href="index.html" aria-current="page">About</a>
+        <a href="papers.html">Papers</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- EDIT: replace this paragraph with your bio -->
+    <p class="lede">
+      [Your bio goes here. One or two sentences: who you are, where you study or work,
+      and what you research.]
+    </p>
+    <p>
+      [Research interests, e.g. asset pricing, stochastic processes, AI and markets.]
+    </p>
+
+    <h2>Recent papers</h2>
+    <!-- This list fills itself from assets/papers.js (newest 3). -->
+    <div id="recent-papers"></div>
+    <p><a href="papers.html">All papers &rarr;</a></p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">&copy; <span id="year"></span> Luke D. Visconte</div>
+  </footer>
+
+  <script src="assets/papers.js"></script>
+  <script src="assets/render.js"></script>
+</body>
+</html>
