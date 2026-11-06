@@ -22,23 +22,27 @@
 
   function card(p) {
     var finished = p.status === "finished";
-    var meta = '<span class="tag ' + (finished ? "finished" : "working") + '">' +
-      (finished ? "Finished" : "Working paper") + "</span>";
+    // Drafts get no label; only final papers are marked.
+    var meta = finished ? '<span class="tag finished">Final</span>' : "";
     var bits = [];
     if (p.authors) bits.push(esc(p.authors));
     if (p.venue) bits.push("<em>" + esc(p.venue) + "</em>");
     if (p.date) bits.push((finished ? "" : "This version: ") + niceDate(p.date));
     meta += bits.join(" · ");
 
+    // The title itself opens the PDF in a new tab.
+    var title = p.pdf
+      ? '<a href="' + esc(p.pdf) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
+      : esc(p.title);
+
     var links = [];
-    if (p.pdf) links.push('<a href="' + esc(p.pdf) + '">PDF</a>');
     if (p.code) links.push('<a href="' + esc(p.code) + '">Code &amp; data</a>');
     if (p.link) links.push('<a href="' + esc(p.link) + '">Link</a>');
 
     return '<article class="paper">' +
-      '<div class="paper-title">' + esc(p.title) + "</div>" +
+      '<div class="paper-title">' + title + "</div>" +
       '<div class="paper-meta">' + meta + "</div>" +
-      (p.abstract ? '<details class="abstract"><summary>Abstract</summary><p>' + esc(p.abstract) + "</p></details>" : "") +
+      (p.abstract ? '<details class="abstract"><summary>' + esc(p.abstractLabel || "Abstract") + "</summary><p>" + esc(p.abstract) + "</p></details>" : "") +
       (links.length ? '<div class="paper-links">' + links.join("") + "</div>" : "") +
       "</article>";
   }
@@ -50,6 +54,7 @@
   }
 
   fill("recent-papers", papers.slice(0, 3), "Papers coming soon.");
-  fill("working-papers", papers.filter(function (p) { return p.status !== "finished"; }), "None at the moment.");
-  fill("finished-papers", papers.filter(function (p) { return p.status === "finished"; }), "None yet.");
+  fill("all-papers", papers, "Papers coming soon.");
+  // Commentaries stay in series order (1, 2, 3...), not sorted by date.
+  fill("all-commentaries", (window.COMMENTARIES || []).slice(), "Coming soon.");
 })();

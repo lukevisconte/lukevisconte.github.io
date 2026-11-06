@@ -1,27 +1,19 @@
 /* ------------------------------------------------------------
    Site styles. Colours are set once here; change them freely.
    ------------------------------------------------------------ */
+/* Warm espresso palette, shown to every visitor regardless of their light/dark setting.
+   Taken from the portrait: camel sweater, olive leaves. */
 :root {
-  --bg: #fdfcf9;
-  --text: #1f1f1f;
-  --muted: #5f5f5f;
-  --accent: #7a1f1f;      /* deep academic red for links */
-  --rule: #e2ded5;
-  --tag-working: #8a5a00;
-  --tag-finished: #1f5f3a;
-  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+  --bg: #1d1a15;          /* espresso brown */
+  --text: #ece5d6;        /* warm off-white */
+  --muted: #b3a891;       /* soft tan */
+  --accent: #aebf7f;      /* sage/olive for links */
+  --rule: #3a3428;        /* dark camel line */
+  --tag-working: #d4b07a;
+  --tag-finished: #aebf7f;
+  --serif: "Times New Roman", Times, serif;
   --sans: "Inter", -apple-system, "Segoe UI", Arial, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #161514;
-    --text: #e8e6e1;
-    --muted: #a5a29b;
-    --accent: #e08a7a;
-    --rule: #34322e;
-    --tag-working: #e0b25a;
-    --tag-finished: #7cc79a;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -31,8 +23,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--serif);
-  font-size: 1.125rem;
-  line-height: 1.65;
+  font-size: 1.2rem;      /* Times runs small, so the base size is a touch larger */
+  line-height: 1.6;
 }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
 
@@ -71,7 +63,40 @@ p { margin: 0 0 16px; }
 .lede { font-size: 1.2rem; }
 .muted { color: var(--muted); }
 
+/* About page: photo beside bio, stacked on phones */
+/* The photo stretches to the same height as the bio beside it. */
+.about { display: flex; gap: 32px; align-items: stretch; }
+.portrait {
+  width: 260px; min-height: 300px; object-fit: cover; object-position: 50% 20%;
+  flex-shrink: 0; border-radius: 4px; border: 1px solid var(--rule);
+}
+.bio p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .about { flex-direction: column; gap: 20px; }
+  .portrait { width: 100%; max-width: 280px; height: 360px; min-height: 0; }
+}
+
+/* Papers page: research text on the left, paper list on the right */
+body.wide .wrap { max-width: 1160px; }
+body.wide header.site { margin-bottom: 24px; padding-bottom: 14px; }
+.two-col { display: grid; grid-template-columns: 1.08fr 1fr; gap: 48px; align-items: start; }
+.research-text p { font-size: 1.08rem; line-height: 1.5; margin-bottom: 12px; }
+.paper-list .muted { font-family: var(--sans); font-size: 0.85rem; margin-bottom: 24px; }
+.commentaries { margin-top: 8px; }
+.commentaries .section-title { margin: 24px 0 2px; }
+.section-sub { font-style: italic; color: var(--muted); font-size: 0.95rem; margin: 0 0 16px; }
+.commentary-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; align-items: start; }
+.commentary-row .paper { margin: 0; }
+@media (max-width: 860px) {
+  .commentary-row { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 860px) {
+  .two-col { grid-template-columns: 1fr; gap: 24px; }
+}
+
 /* Paper entries */
+.paper-title a { color: var(--text); text-decoration: none; }
+.paper-title a:hover { color: var(--accent); text-decoration: underline; }
 .paper { margin: 0 0 30px; }
 .paper-title { font-size: 1.2rem; font-weight: 600; margin: 0 0 4px; line-height: 1.35; }
 .paper-meta {
