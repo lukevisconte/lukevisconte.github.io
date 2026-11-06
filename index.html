@@ -7,7 +7,7 @@
   <meta name="description" content="Research and working papers by Luke D. Visconte.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -24,19 +24,16 @@
   </header>
 
   <main class="wrap">
-    <!-- EDIT: replace this paragraph with your bio -->
-    <p class="lede">
-      [Your bio goes here. One or two sentences: who you are, where you study or work,
-      and what you research.]
-    </p>
-    <p>
-      [Research interests, e.g. asset pricing, stochastic processes, AI and markets.]
-    </p>
-
-    <h2>Recent papers</h2>
-    <!-- This list fills itself from assets/papers.js (newest 3). -->
-    <div id="recent-papers"></div>
-    <p><a href="papers.html">All papers &rarr;</a></p>
+    <div class="about">
+      <!-- Your photo: save it as files/photo.jpg. Hidden until the file exists. -->
+      <img class="portrait" src="files/photo.jpg" alt="Photo of Luke D. Visconte"
+           onerror="this.style.display='none'">
+      <div class="bio">
+        <p class="lede">Welcome! I’m Luke Visconte, an independent author researching and writing on a wide range of topics, including econometrics, applied mathematics, and philosophy.</p>
+        <p>My research, while quite broad, tends toward an underlying fixation of mine: identifying, testing, critiquing, and creating systems that better represent an ideal reality, from mathematical models to political frameworks.</p>
+        <p>When I’m not researching or writing, I enjoy everything from attending Cincinnati Reds games to visiting art exhibits. Above all else, though, I love golf, euchre, and boating.</p>
+      </div>
+    </div>
   </main>
 
   <footer class="site">

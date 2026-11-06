@@ -7,10 +7,10 @@
   <meta name="description" content="Working and finished papers by Luke D. Visconte.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="wide">
   <header class="site">
     <div class="wrap">
       <a class="site-name" href="index.html">Luke D. Visconte</a>
@@ -24,15 +24,32 @@
   </header>
 
   <main class="wrap">
-    <h1>Papers</h1>
-    <p class="muted">Working papers are drafts and may change. Comments are welcome.</p>
+   <div class="two-col">
+    <section class="research-text">
+    <p>My early research tested broad financial markets by comparing Geometric Brownian Motion against real return data. In a subsequent project, the same premise was tested against more advanced models, in particular the Bates model. My later economic research attempted a targeted solution through the testing and support of an economic drawdown model, formulated using a Gaussian kernel, designed for specialized situations of particularly dire economic distress; its overparameterization makes it a situational tool.</p>
 
-    <!-- Both lists fill themselves from assets/papers.js -->
-    <h2>Working papers</h2>
-    <div id="working-papers"></div>
+    <p>My interests have always been extremely interdisciplinary: I’ve also written commentaries on works across philosophy, science, and economics, with much of my philosophical work focusing on the semantics of “meaning,” questionable structures in existing and historical analytic theories, and the consequences of semantic differences in metaphysical and political disagreements.</p>
 
-    <h2>Finished papers</h2>
-    <div id="finished-papers"></div>
+    <p>I’m working on several pieces that delve deeper into how unresolved issues of language and meaning can produce immense divergence in thought. One focuses on the debate between John Rawls’s maximin reasoning and John Harsanyi’s average-utility approach to choice behind the veil of ignorance; another examines fundamental disagreements about the nature of liberty among libertarian thinkers, especially the divergence between the theories of Friedrich von Hayek and Milton Friedman.</p>
+
+    <p>Finally, I’m drafting a piece in econophysics that explores and rigorously tests how physical phenomena could help create new structures for economic markets, through the specific analogy of quantum tunneling as it relates to the survival of assets during black swan events.</p>
+    </section>
+
+    <section class="paper-list">
+    <p class="muted">All papers here are drafts unless specified as final. Comments are nonetheless welcome, but drafts and unfinalized papers will change prior to submission.</p>
+
+    <!-- This list fills itself from assets/papers.js. Papers marked "finished" get a "Final" label. -->
+    <div id="all-papers"></div>
+    </section>
+   </div>
+
+   <!-- Full-width row under both columns; commentaries sit side by side. -->
+   <section class="commentaries">
+     <h2 class="section-title">Commentaries</h2>
+     <p class="section-sub">Essays on enduring questions in philosophy. More to come soon.</p>
+     <!-- This list fills itself from window.COMMENTARIES in assets/papers.js -->
+     <div id="all-commentaries" class="commentary-row"></div>
+   </section>
   </main>
 
   <footer class="site">
