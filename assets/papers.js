@@ -104,4 +104,13 @@ window.COMMENTARIES = [
     pdf:      "papers/commentaries/unequal-in-value-equal-in-dignity.pdf",
   },
 
+  {
+    title:    "What Pilate Walked Away From: Truth and Fallible Realism",
+    venue:    "Commentary 4",
+    status:   "working",
+    abstractLabel: "Argument",
+    abstract: "This essay asks what truth is, beginning from the Correspondence Theory that Aristotle first stated and that most people still assume. It follows the challenges correspondence has faced, from Locke’s secondary qualities, Berkeley’s idealism, and Kant’s things in themselves to Strawson’s doubts about facts and the paradoxes of bivalence, and it examines the main alternatives: verificationism, coherence, deflationism, and pragmatism. Gathering these into two schools, it argues that objectivism fails not because there is no objective truth, but because no one can claim to know it, as the history of overturned beliefs from Kuhn to Laudan shows; relativism, meanwhile, refutes itself and, as Orwell saw, serves those who would impose truths of their own. It concludes for Fallible Realism: the assumption that one objective reality exists, joined to the admission that no human perspective can grasp it fully, so that certainty in any belief becomes the ultimate enemy.",
+    pdf:      "papers/commentaries/what-pilate-walked-away-from.pdf",
+  },
+
 ];
